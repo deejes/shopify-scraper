@@ -8,7 +8,6 @@ stores_urls = [
 
 def scrape_store(store_urls):
     filename = "shopify_store_products.csv"
-    print (filename)
     create_file(filename)
     for url in store_urls:
         base_url = url
@@ -20,7 +19,7 @@ def scrape_store(store_urls):
                 write_values_from_url(page_url, filename,base_url)
                 n += 1
             except:
-                print ("Done")
+                print ("Done scraping - " + base_url)
                 break
 
 
